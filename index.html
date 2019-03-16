@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- DevCorner - Favicon -->
+  <link rel="shortcut icon" href="img/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="css/all.css">
+
+  <!-- Custom Css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>DevCorner</title>
+</head>
+<body>
+
+  <div class="center">
+    <h3 class="brand"><i class="fas fa-code"></i> DevCorner Community</h3>
+    <p class="slogan">The independent web developer community</p>
+    <p>Simple text compare</p>
+  </div>
+
+  <div class="container">
+    <div class="boxes">
+      <div class="box">
+          <p>Words: <b id="statTextWords1">0</b> Characters: <b id="statTextCharacters1">0</b></p>
+          <textarea data-autosize-on="true" data-role="none" spellcheck="false" class="form-control text1" rows="10" placeholder="Paste Original Text..."></textarea>
+      </div>
+      <div class="box">
+          <p>Words: <b id="statTextWords2">0</b> Characters: <b id="statTextCharacters2">0</b></p>
+          <textarea data-autosize-on="true" data-role="none" spellcheck="false" class="form-control text2" rows="10" placeholder="Paste Target Text.."></textarea>
+      </div>
+    </div>
+
+    <div class="boxes_2">
+      <p>(Press 'Compare' to recalculate)</p>
+      <button class="compare-text">Compare</button>
+      <div class="levenshtein">Levenshtein: <span id="levenshtein">0</span></div>
+    </div>
+
+    <div class="difference">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#one-text" aria-controls="one-text" role="tab" data-toggle="tab" aria-expanded="true">Text in <b>1.</b> column</a>
+        </li>
+        <li role="presentation">
+          <a href="#two-texts" aria-controls="two-texts" role="tab" data-toggle="tab" aria-expanded="false">Text in <b>2.</b> columns</a>
+        </li>
+        <li>
+          <p>
+            <span class="diff-deletion"> </span><i class="fas fa-circle"></i> Removed
+            <span class="diff-insertion"> </span><i class="fas fa-circle"></i> Added
+          </p>
+        </li>
+      </ul>
+      <!-- Tab panes - OK -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="one-text">
+          <div class="output"><span class="diff-insertion"></span></div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="two-texts">
+          <div class="output_2">
+            <div class=" first-text"></div>
+            <div class=" second-text"><span class="diff-insertion"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="js/modified_jquery-1.11.3.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+  <script src="js/main.js"></script>
+</body>
+</html>
